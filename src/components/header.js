@@ -1,42 +1,56 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+    this.state = {
+      prevScrollY: window.pageYOffset,
+      visible: true
+    };
+  }
+
+  handleScroll = () => {
+    const { prevScrollY } = this.state;
+
+    const currentScrollY = window.pageYOffset;
+    const visible = prevScrollY > currentScrollY;
+
+    this.setState({
+      prevScrollY: currentScrollY,
+      visible
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  render(){
+    const { visible } = this.state;
+    return(
+      <header  style={{top: !visible ? "-40px" : 0}} >
+        <nav>
+          <ul className="navbar">
+            <div className="brand">
+              <li><Link to="/">Sarang Mohaniraj</Link></li>
+            </div>
+            <div className="nav-items">
+              <li className="nav-item"><Link to="/#about">About Me</Link></li>
+              <li className="nav-item"><Link to="/#skills">Skills</Link></li>
+              <li className="nav-item"><Link to="/#projects">Projects</Link></li>
+              <li className="nav-item"><Link to="/#contact">Contact</Link></li>
+            </div>
+          </ul>
+        </nav>
+      </header>
+    )
+  }
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
-export default Header
