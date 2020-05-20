@@ -4,6 +4,10 @@ $colorSecondary: #3F72AF;
 $colorAccent: #DBE2EF;
 $colorLight: #F9F7F7;
 
+$github: #211F1F;
+$linkedin: #2867B2;
+$react: #61DBFB;
+
 // Font
 $font: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 
@@ -41,10 +45,36 @@ $xl: 1200px;
 }
 
 // Layout
+section {
+  min-height: 100vh;
+
+  .container {
+    .section-container {
+      padding-bottom:10rem;
+      overflow: hidden;
+
+      .section-content {
+        float: right;
+        width: $md;
+        *{
+          margin: 0;
+          line-height: 1.8rem;
+        }
+      }
+      .section-title {
+        color: $colorSecondary;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+
+
+  }
+}
 
 // Container
 .container {
-  padding: 0 1rem;
   margin: 0 auto;
   max-width: 480px;
   @include media-breakpoint-up(md){
@@ -61,60 +91,75 @@ a {
   text-decoration: none;
 }
 
+.icon-transition {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+
+  &:hover,&:focus {
+    color: $colorSecondary;
+
+    &.fa-github {
+      color: $github;
+    }
+    &.fa-instagram {
+      color: $github;
+    }
+    &.fa-linkedin-in {
+      color: $linkedin;
+    }
+    &.fa-react {
+      color: $react;
+    }
+  }
+}
+
 // Header
 header {
   position: fixed;
-  z-index: 20;
+  z-index: 200;
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.16);
   width: 100%;
   top: 0;
   transition: top 0.6s;
   padding: 1rem 0;
+  overflow: hidden;
+  background-color: $colorLight;
 
   nav {
     margin: 0 3rem;
+
+    .navbar-brand {
+      color: $colorPrimary;
+      font-size: 1.1rem;
+
+      &:hover,:focus {
+        color: $colorSecondary;
+      }
+    }
+
     ul.navbar {
       list-style-type: none;
       padding: 0;
       margin: 0;
+      float: right;
 
-      div{
+      li.nav-item {
+        display: inline-block;
+        margin-right: 1rem;
         display: inline-block;
 
-        &.brand {
-          float: left;
-          font-size: 1rem;
-
-          li a {
-            color: $colorPrimary;
-            font-size: 1.1rem;
-
-            &:hover,:focus {
-              color: $colorSecondary;
-            }
-          }
+        &:last-child {
+          margin-right: 0;
         }
 
-        &.nav-items {
-          float: right;
+        a{
+          color: $colorPrimary;
+          font-size: 1.1rem;
 
-          li.nav-item {
-            margin-right: .5rem;
-            display: inline-block;
-
-            &:last-child {
-              margin-right: 0;
-            }
-
-            a{
-              color: $colorPrimary;
-              font-size: 1.1rem;
-
-              &:hover,:focus {
-                color: $colorSecondary;
-              }
-            }
-
+          &:hover,:focus {
+            color: $colorSecondary;
           }
         }
       }
@@ -125,13 +170,11 @@ header {
 // Hero
 #hero {
   .container {
-    min-height: 100vh;
-    line-height: 1rem;
     padding: 15rem 0 0;
-
 
     .hero-container{
       display: inline-block;
+      line-height: 1rem;
     }
 
     h1 {
@@ -155,13 +198,16 @@ header {
         font-size: 4rem;
       }
     }
+    .hero-text-container {
+      line-height: 1.8rem;
+      max-width: 32rem;
+      color: $colorSecondary;
+    }
 
   }
 }
 
 // Social Media/Networking Side Bar
-$github: #211F1F;
-$linkedin: #2867B2;
 .icon-bar {
   position: fixed;
   bottom: 0;
@@ -171,46 +217,141 @@ $linkedin: #2867B2;
   align-items: center;
 
 
-  a svg{
+  .icon-transition{
     color: $colorPrimary;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
 
-    &:hover,:focus {
-      color: $colorSecondary;
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1);
+    &:hover,&:focus {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
 
-      &.fa-github {
-        color: $github;
-      }
-      &.fa-instagram {
-        color: $github;
-      }
-      &.fa-linkedin-in {
-        color: $linkedin;
-      }
     }
   }
 
   &:after {
-    content: '';
+    content: "";
     width: 1px;
     height: 25vh;
     background-color: $colorPrimary;
   }
 }
 
+// About
+#about {
+  .container .section-container {
+    .section-content {
+      p {
+        color: $colorSecondary;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+// Skills
+#skills {
+  .container .section-container {
+    .section-content {
+      display: flex;
+
+      .area {
+        margin-right: 6rem;
+
+        .skill {
+          margin-bottom: 1rem;
+
+          &:first-child {
+            color: $colorSecondary;
+          }
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+}
+
 
 // Projects
-.projects {
-  display: flex;
-  flex-wrap: wrap;
+#projects {
+  .container {
+    .section-container {
+      $translateProject: 3px;
+      padding-top: $translateProject;
+      .section-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+        grid-gap: .75rem;
+
+        .project{
+          background-color: $colorPrimary;
+          min-height: 20rem;
+          padding: 2rem 1.5rem;
+          display: flex;
+          overflow: hidden;
+
+          transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -o-transition: all 0.3s ease-in-out 0s;
+
+          .project-inner{
+            overflow: hidden;
+            overflow-wrap: break-word;
+            position: relative;
+
+            .project-title {
+              color: $colorLight;
+              display: inline-block;
+            }
+            .project-external {
+              float: right;
+              display: flex;
+              justify-content: space-between;
+              width: 50px;
+
+              .icon-transition {
+                color: $colorLight;
+                font-size: 1.2rem;
+
+
+                &.fa-external-link-alt:hover,&.fa-github:hover {
+                  color: $colorSecondary;
+                }
+              }
+            }
+            .project-description {
+              color: $colorAccent;
+            }
+            .project-tech {
+              position: absolute;
+              bottom: 0;
+              padding: 0;
+              color: $colorLight;
+              font-size: 1.5rem;
+              display: flex;
+              flex-wrap: wrap-reverse;
+
+              .icon-transition {
+                margin-right: 1rem;
+              }
+            }
+          }
+
+          &:hover,:focus {
+            z-index: 20;
+            box-shadow: 0px 26px 38px rgba(0,0,0,0.5);
+            -webkit-transform: translateY(-$translateProject);
+               -moz-transform: translateY(-$translateProject);
+                -ms-transform: translateY(-$translateProject);
+                 -o-transform: translateY(-$translateProject);
+                    transform: translateY(-$translateProject);
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -228,5 +369,24 @@ footer {
     text-align: center;
     color: $colorSecondary;
     font-weight: 700;
+
+    .footer-p{
+      display: inline-block;
+      &:before, &:after {
+        content: "";
+        width: 10vw;
+        height: 1px;
+        display: inline-block;
+        vertical-align: middle;
+        // margin: 0 1rem;
+        background-color: $colorAccent;
+      }
+      &:before {
+        margin-right: 1rem;
+      }
+      &:after {
+        margin-left: 1rem;
+      }
+    }
   }
 }

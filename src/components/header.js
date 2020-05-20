@@ -5,22 +5,29 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
 
+    this.header = React.createRef();
+
     this.state = {
-      prevScrollY: window.pageYOffset,
+      prevScrollY: typeof window !== `undefined` ? window.pageYOffset : null,
       visible: true
     };
+
   }
 
+
   handleScroll = () => {
-    const { prevScrollY } = this.state;
+    if (typeof window !== `undefined`) {
+      const { prevScrollY } = this.state;
 
-    const currentScrollY = window.pageYOffset;
-    const visible = prevScrollY > currentScrollY;
+      const currentScrollY = window.pageYOffset;
+      const visible = prevScrollY > currentScrollY;
 
-    this.setState({
-      prevScrollY: currentScrollY,
-      visible
-    });
+      this.setState({
+        prevScrollY: currentScrollY,
+        visible,
+        height: this.header.current.clientHeight || "55"
+      });
+    }
   };
 
   componentDidMount() {
@@ -32,20 +39,16 @@ export default class Header extends React.Component {
   }
 
   render(){
-    const { visible } = this.state;
+    const { visible, height } = this.state;
     return(
-      <header  style={{top: !visible ? "-40px" : 0}} >
+      <header style={{top: !visible ? `-${height+5}px` : 0}} ref={this.header}>
         <nav>
+          <Link className="navbar-brand"to="/">Sarang Mohaniraj</Link>
           <ul className="navbar">
-            <div className="brand">
-              <li><Link to="/">Sarang Mohaniraj</Link></li>
-            </div>
-            <div className="nav-items">
-              <li className="nav-item"><Link to="/#about">About Me</Link></li>
-              <li className="nav-item"><Link to="/#skills">Skills</Link></li>
-              <li className="nav-item"><Link to="/#projects">Projects</Link></li>
-              <li className="nav-item"><Link to="/#contact">Contact</Link></li>
-            </div>
+            <li className="nav-item"><Link to="/#about">About Me</Link></li>
+            <li className="nav-item"><Link to="/#skills">Skills</Link></li>
+            <li className="nav-item"><Link to="/#projects">Projects</Link></li>
+            <li className="nav-item"><Link to="/#contact">Contact</Link></li>
           </ul>
         </nav>
       </header>

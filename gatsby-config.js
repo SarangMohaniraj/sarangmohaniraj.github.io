@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Sarang Mohaniraj | Developer`,
+    title: `Sarang Mohaniraj | Portfolio`,
     description: `Personal website for Sarang Mohaniraj showcasing his skills and projects.`,
     author: `Sarang Mohaniraj`,
+    siteUrl: "https://sarangmohaniraj.github.io"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,7 +24,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#F9F7F7`,
         theme_color: `#112D4E`,
-        display: `minimal-ui`,
+        display: `standalone`,
         // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
