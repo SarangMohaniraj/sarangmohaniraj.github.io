@@ -1,9 +1,9 @@
 {
-  "name": "Sarang Mohaniraj | Portfolio",
+  "name": "Portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal website for Sarang Mohaniraj showcasing his skills and projects.",
   "version": "0.2.0",
-  "author": "Sarang Mohaniraj <sarangmohaniraj@gmail.com>",
+  "author": "Sarang Mohaniraj <sarangmohaniraj@gmail.com> (https://sarangmohaniraj.github.io)",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
@@ -17,6 +17,7 @@
     "gatsby-plugin-sass": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.4",
     "gatsby-source-filesystem": "^2.3.4",
+    "gatsby-transformer-json": "^2.4.3",
     "gatsby-transformer-sharp": "^2.5.2",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",

@@ -323,11 +323,13 @@ header {
             }
             .project-description {
               color: $colorAccent;
+              padding-bottom: 3rem;
             }
             .project-tech {
-              position: absolute;
-              bottom: 0;
+              // position: absolute;
+              // bottom: 0;
               padding: 0;
+              box-sizing: inherit;
               color: $colorLight;
               font-size: 1.5rem;
               display: flex;

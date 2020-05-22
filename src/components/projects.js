@@ -1,39 +1,14 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from "gatsby-image"
 
-
-const projects = [
-  {
-    title: "1",
-    description: "lkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfaj",
-    tech: ["react"],
-    githubURL: "https://github.com",
-    url: "https://github.com"
-  },
-  {
-    title: "2",
-    description: "lkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfaj"
-  },
-  {
-    title: "3",
-    description: "lkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfaj"
-  },
-  {
-    title: "4",
-    description: "lkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfajlkajsflasjfaljflajfajfaj",
-    tech: ["react"],
-    githubURL: "https://github.com",
-    url: "https://github.com"
-  },
-]
-
-const Projects = () => (
+const Projects = ({projects}) => (
   <section id="projects">
     <div className="container">
       <div className="section-container">
         <h3 className="section-title">Projects</h3>
         <div className="section-content">
-          {projects.map(project => (
+          {projects.map(({node: project}) => (
             <Project project={project} key={project.title} />
           ))}
         </div>
@@ -47,6 +22,7 @@ const Project = ( {project} ) => {
   return(
     <div className="project">
       <div className="project-inner">
+        {image && <Image fluid={image.childImageSharp.fluid} alt={title}/>}
         <span>
           <h4 className="project-title">{title}</h4>
           <div className="project-external">
