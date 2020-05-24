@@ -62,7 +62,6 @@ $xl: 1200px;
 
 // Container
 .container {
-  padding-bottom: 5rem;
   @include media-breakpoint-up(xs){
     margin: 5rem 2rem;
   }
@@ -83,7 +82,13 @@ a {
 
 // General layout of main page
 section {
-  min-height: 100vh;
+  @include media-breakpoint-up(xs){
+      min-height: 75vh;
+    }
+    @include media-breakpoint-up(md){
+      min-height: 100vh;
+    }
+  padding-bottom: 2rem;
   .section-container {
 
     @include media-breakpoint-up(md){
@@ -220,9 +225,18 @@ header.header {
 // Hero
 #hero {
   .hero-container{
-    padding: 15rem 0 0;
     display: inline-block;
     line-height: 1rem;
+    min-height: 75vh;
+
+    @include media-breakpoint-up(xs){
+      padding: 5rem 0 0;
+
+    }
+    @include media-breakpoint-up(md){
+      padding: 15rem 0 0;
+    }
+
   }
 
   h1 {
@@ -338,7 +352,12 @@ header.header {
       justify-content: space-between;
 
       .area {
-
+        @include media-breakpoint-up(xs){
+          font-size: .8rem;
+        }
+        @include media-breakpoint-up(md){
+          font-size: 1rem;
+        }
         .skill {
           margin-bottom: 1rem;
 
