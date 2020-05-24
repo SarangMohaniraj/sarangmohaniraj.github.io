@@ -21,23 +21,21 @@ const Project = ( {project} ) => {
   const { title, image, description, tech, githubURL, url } = project;
   return(
     <div className="project">
+      {image && <Image fluid={image.childImageSharp.fluid} alt={title} />}
       <div className="project-inner">
-        {image && <Image fluid={image.childImageSharp.fluid} alt={title}/>}
-        <span>
-          <h4 className="project-title">{title}</h4>
-          <div className="project-external">
-            {githubURL && <a href={githubURL} aria-label={"GitHub Repository"} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={['fab','github']} className="icon-transition"/>
-            </a>}
-            {url && <a href={url} aria-label={"Project Website"} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon="external-link-alt" className="icon-transition"/>
-            </a>}
-          </div>
-        </span>
+        <div className="project-external">
+          {githubURL && <a href={githubURL} aria-label={`${title} GitHub Repository`} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={['fab','github']} className="icon-transition project-external-github" fixedWidth={true}/>
+          </a>}
+          {url && <a href={url} aria-label={`${title} Website`} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon="external-link-alt" className="icon-transition project-external-url" fixedWidth={true}/>
+          </a>}
+        </div>
+        <h4 className="project-title">{title}</h4>
         <p className="project-description">{description}</p>
         <footer className="project-tech">
         {tech && tech.map(icon => (
-          <FontAwesomeIcon icon={['fab',icon]} key={['fab',icon]} className="icon-transition"/>
+          icon !== "" && <FontAwesomeIcon icon={['fab',icon]} key={['fab',icon]} className="icon-transition" fixedWidth={true}/>
         ))}
         </footer>
       </div>

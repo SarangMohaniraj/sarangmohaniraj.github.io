@@ -1,0 +1,18 @@
+[
+  {
+    "area": "Languages",
+    "skills": ["Java", "Python", "JavaScript", "HTML/(S)CSS", "C#"]
+  },
+  {
+    "area": "Frameworks",
+    "skills": ["Node", "Express", "React", "Redux", "Gatsby"]
+  },
+  {
+    "area": "Tools",
+    "skills": ["Tensorflow", "Git & GitHub", "Android Studio"]
+  },
+  {
+    "area": "Cloud",
+    "skills": ["Firebase", "Firestore", "AWS"]
+  }
+]

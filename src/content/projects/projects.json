@@ -1,0 +1,55 @@
+[
+  {
+    "title": "Predict Target Federal Funds Rate",
+    "description": "",
+    "tech": ["python","google-colab"],
+    "githubURL": "https://github.com/SarangMohaniraj/PredictTargetFederalFundsRate",
+    "url": "https://colab.research.google.com/github/SarangMohaniraj/PredictTargetFederalFundsRate/blob/master/PredictTargetFederalFundsRate.ipynb",
+    "image": ".images/PredictTargetFederalFundsRate.png"
+  },
+  {
+    "title": "Chance Me",
+    "description": "",
+    "tech": ["python"],
+    "githubURL": "https://github.com/SarangMohaniraj/ChanceMe"
+  },
+  {
+    "title": "Server Heat Map",
+    "description": "",
+    "tech": ["python"],
+    "githubURL": "https://github.com/SarangMohaniraj/ServerHeatMap"
+  },
+  {
+    "title": "Pathfinding",
+    "description": "",
+    "tech": ["c-sharp"],
+    "githubURL": "https://github.com/SarangMohaniraj/Pathfinding",
+    "image": "./images/pathfinding.png"
+  },
+  {
+    "title": "SB Leos",
+    "description": "",
+    "tech": ["js-square", "react", "redux", "firebase", "bootstrap"],
+    "githubURL": "https://github.com/sbleos/sbleos.github.io",
+    "url": "https://sbleos.org"
+  },
+  {
+    "title": "Stat",
+    "description": "",
+    "tech": ["js-square"],
+    "githubURL": "https://github.com/SarangMohaniraj/Stat",
+    "url": "https://sarangmohaniraj.github.io/Stat"
+  },
+  {
+    "title": "Open AI Gym Discrete",
+    "description": "",
+    "tech": ["python"],
+    "githubURL": "https://github.com/SarangMohaniraj/OpenAIGymDiscrete"
+  },
+  {
+    "title": "Cookie Clicker",
+    "description": "",
+    "tech": ["java"],
+    "githubURL": "https://github.com/SarangMohaniraj/CookieClicker"
+  }
+]

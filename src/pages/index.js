@@ -6,11 +6,11 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 
-import IconBar from "../components/icon-bar"
 import Hero from "../components/hero"
 import About from "../components/about"
 import Skills from "../components/skills"
 import Projects from "../components/projects"
+import Contact from "../components/contact"
 
 const IndexPage = () => {
   const content = useStaticQuery(graphql`
@@ -18,19 +18,27 @@ const IndexPage = () => {
       allProjectsJson {
         edges {
           node {
-            id
             title
             description
             tech
             githubURL
             url
-            image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            #image {
+            #  childImageSharp {
+            #    fluid(maxHeight: 150) {
+            #      ...GatsbyImageSharpFluid
+            #      ...GatsbyImageSharpFluidLimitPresentationSize
+            #    }
+            #  }
+            #}
           }
+        }
+      }
+      allSkillsJson {
+        edges {
+          node {
+            area
+            skills
           }
         }
       }
@@ -46,15 +54,16 @@ const IndexPage = () => {
   `);
 
   const projects = content.allProjectsJson.edges;
+  const skills = content.allSkillsJson.edges;
   const iconBar = content.allIconBarJson.edges;
   return(
     <Layout>
       <SEO/>
-      <IconBar iconBar={iconBar}/>
-      <Hero />
+      <Hero iconBar={iconBar}/>
       <About />
-      <Skills />
+      <Skills skills={skills}/>
       <Projects projects={projects}/>
+      <Contact />
     </Layout>
   )
 }

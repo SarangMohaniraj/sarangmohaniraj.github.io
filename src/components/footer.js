@@ -1,8 +1,8 @@
 import React from "react"
 
 const Footer = () => (
-  <footer>
-    <div className="container text-center">
+  <footer className="footer">
+    <div className=" text-center">
       <p className="footer-p">
         Created by Sarang Mohaniraj
       </p>

@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import React from "react"
 
 export default class Header extends React.Component {
@@ -9,11 +9,11 @@ export default class Header extends React.Component {
 
     this.state = {
       prevScrollY: typeof window !== `undefined` ? window.pageYOffset : null,
-      visible: true
+      visible: true,
+      height: "55"
     };
 
   }
-
 
   handleScroll = () => {
     if (typeof window !== `undefined`) {
@@ -32,6 +32,7 @@ export default class Header extends React.Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    console.log("hi")
   }
 
   componentWillUnmount() {
@@ -39,16 +40,20 @@ export default class Header extends React.Component {
   }
 
   render(){
-    const { visible, height } = this.state;
+    const { visible, height, currentScrollY } = this.state;
     return(
-      <header style={{top: !visible ? `-${height+5}px` : 0}} ref={this.header}>
+      <header className="header" style={{top: !visible ? `-${height+5}px` : 0, boxShadow: currentScrollY < height*4 ? "0 4px 2px -2px rgba(0,0,0,.16)" : "none"}} ref={this.header}>
         <nav>
-          <Link className="navbar-brand"to="/">Sarang Mohaniraj</Link>
+          <AnchorLink className="navbar-brand" to="/#hero" title="Sarang Mohaniraj" stripHash />
           <ul className="navbar">
-            <li className="nav-item"><Link to="/#about">About Me</Link></li>
-            <li className="nav-item"><Link to="/#skills">Skills</Link></li>
-            <li className="nav-item"><Link to="/#projects">Projects</Link></li>
-            <li className="nav-item"><Link to="/#contact">Contact</Link></li>
+            {[
+              {name: "About Me", to: "/#about"},
+              {name: "Skills", to: "/#skills"},
+              {name: "Projects", to: "/#projects"},
+              {name: "Contact", to: "/#contact"}
+            ].map(section => (
+              <li className="nav-item" key={section.name}><AnchorLink to={section.to} title={section.name} stripHash /></li>
+            ))}
           </ul>
         </nav>
       </header>
