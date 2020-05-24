@@ -463,25 +463,36 @@ header.header {
           margin-bottom: 2rem;
         }
 
-        input, textarea {
-          background-color: $colorPrimary;
-          color: $colorLight;
-          width: 100%;
+        label{
+          color: $colorPrimary;
+          font-weight: 700;
           font-size: 1.2rem;
-          border: none;
-          margin-bottom: 1rem;
-          font-family: $font;
-          padding: 20px;
-          resize: none;
-          -webkit-box-sizing: border-box;
-             -moz-box-sizing: border-box;
-                  box-sizing: border-box;
+
+          input, textarea {
+            background-color: $colorPrimary;
+            color: $colorLight;
+            display: inline-block;
+
+            width: 100%;
+            font-size: 1.2rem;
+            border: none;
+            margin-bottom: 1rem;
+            font-family: $font;
+            padding: 20px;
+            resize: none;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
 
 
-          &::placeholder {
-            color: $colorAccent;
+            &::placeholder {
+              color: $colorAccent;
+            }
+
           }
         }
+
+
 
         button {
           background-color: $colorPrimary;

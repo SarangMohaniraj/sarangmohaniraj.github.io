@@ -9,9 +9,9 @@ const Contact = () => (
         <div className="contact-container">
         <h3 className="contact-header">Send me an email if you have any questions!</h3>
         <form /*action="https://formspree.io/xnqgjknq"*/ method="POST">
-          <input type="text" name="_replyto" placeholder="Your Email"/>
-          <input type="text" name="_subject" placeholder="Subject"/>
-          <textarea name="message" placeholder="Message" rows={5}/>
+          <label>Your Email<input type="text" name="_replyto" /></label>
+          <label>Subject<input type="text" name="_subject" /></label>
+          <label>Message<textarea name="message" rows={5}/></label>
           <input type="text" name="_gotcha" style={{display:"none"}} />
           <button type="submit">Send</button>
         </form>
