@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import "../library"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
 
 import Hero from "../components/hero"
@@ -42,24 +41,15 @@ const IndexPage = () => {
           }
         }
       }
-      allIconBarJson {
-        edges {
-          node {
-            icon
-            url
-          }
-        }
-      }
     }
   `);
 
   const projects = content.allProjectsJson.edges;
   const skills = content.allSkillsJson.edges;
-  const iconBar = content.allIconBarJson.edges;
   return(
     <Layout>
       <SEO/>
-      <Hero iconBar={iconBar}/>
+      <Hero />
       <About />
       <Skills skills={skills}/>
       <Projects projects={projects}/>

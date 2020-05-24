@@ -38,7 +38,7 @@ $lg: 992px;
 $xl: 1200px;
 
 
-// always go in order from sm --> xl
+// always go in order from xs --> xl
 @mixin media-breakpoint-up($size) {
   @if $size == xs { // shouldn't use because default styles are for xs
     @media (min-width: 100px) { @content; }
@@ -60,48 +60,9 @@ $xl: 1200px;
   }
 }
 
-// General layout of main page
-section {
-  min-height: 100vh;
-
-  .container {
-
-    .section-container {
-
-      @include media-breakpoint-up(md){
-        padding: 10rem 0 5rem;
-        overflow: hidden;
-      }
-
-      .section-content {
-          *{
-            margin: 0;
-            line-height: 1.8rem;
-          }
-          @include media-breakpoint-up(md){
-            width: $sm;
-          }
-          @include media-breakpoint-up(lg){
-            float: right;
-            width: $md;
-          }
-        }
-
-      .section-title {
-        color: $colorSecondary;
-        text-transform: uppercase;
-        display: inline-block;
-        margin: 0 0 3rem;
-      }
-    }
-
-
-  }
-}
-
 // Container
 .container {
-
+  padding-bottom: 5rem;
   @include media-breakpoint-up(xs){
     margin: 5rem 2rem;
   }
@@ -119,6 +80,40 @@ section {
 a {
   text-decoration: none;
 }
+
+// General layout of main page
+section {
+  min-height: 100vh;
+  .section-container {
+
+    @include media-breakpoint-up(md){
+      padding: 10rem 0 5rem;
+      overflow: hidden;
+    }
+
+    .section-content {
+        *{
+          margin: 0;
+          line-height: 1.8rem;
+        }
+        @include media-breakpoint-up(md){
+          width: $sm;
+        }
+        @include media-breakpoint-up(lg){
+          float: right;
+          width: $md;
+        }
+      }
+
+    .section-title {
+      color: $colorSecondary;
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 0 3rem;
+    }
+  }
+}
+
 
 .icon-transition {
   transition: all 0.3s ease-in-out 0s;
@@ -224,56 +219,52 @@ header.header {
 
 // Hero
 #hero {
-  .container {
+  .hero-container{
     padding: 15rem 0 0;
+    display: inline-block;
+    line-height: 1rem;
+  }
 
-    .hero-container{
-      display: inline-block;
-      line-height: 1rem;
+  h1 {
+    margin:0;
+    color: $colorPrimary;
+    font-size: 2rem;
+    line-height: normal;
+    @include media-breakpoint-up(xs){
+      font-size: 3rem;
     }
-
-    h1 {
-      margin:0;
-      color: $colorPrimary;
+    @include media-breakpoint-up(md){
+      font-size: 4rem;
+    }
+    @include media-breakpoint-up(lg){
+      font-size: 6rem;
+    }
+  }
+  h3 {
+    color: $colorSecondary;
+    font-size: 1.8rem;
+    @include media-breakpoint-up(xs){
       font-size: 2rem;
-      line-height: normal;
-      @include media-breakpoint-up(xs){
-        font-size: 3rem;
-      }
-      @include media-breakpoint-up(md){
-        font-size: 4rem;
-      }
-      @include media-breakpoint-up(lg){
-        font-size: 6rem;
-      }
     }
-    h3 {
-      color: $colorSecondary;
-      font-size: 1.8rem;
-      @include media-breakpoint-up(xs){
-        font-size: 2rem;
-      }
-      @include media-breakpoint-up(md){
-        font-size: 3rem;
-      }
-      @include media-breakpoint-up(lg){
-        font-size: 4rem;
-      }
+    @include media-breakpoint-up(md){
+      font-size: 3rem;
     }
-    .hero-text-container {
+    @include media-breakpoint-up(lg){
+      font-size: 4rem;
+    }
+  }
+  .hero-text-container {
+    line-height: 1.8rem;
+    max-width: 32rem;
+    color: $colorSecondary;
+
+    @include media-breakpoint-up(xs){
+      font-size: .8rem;
+    }
+    @include media-breakpoint-up(md){
+      font-size: 1rem;
       line-height: 1.8rem;
-      max-width: 32rem;
-      color: $colorSecondary;
-
-      @include media-breakpoint-up(xs){
-        font-size: .8rem;
-      }
-      @include media-breakpoint-up(md){
-        font-size: 1rem;
-        line-height: 1.8rem;
-      }
     }
-
   }
 }
 
@@ -284,9 +275,9 @@ header.header {
 
   @include media-breakpoint-up(xs){
     margin-bottom: 2.5rem;
-
+    justify-content: center;
     .icon-transition{
-      margin-right: 1.5rem;
+      margin: 0 1.5rem;
 
     }
 
@@ -300,8 +291,7 @@ header.header {
     flex-direction: column;
 
     .icon-transition{
-      margin: 0;
-      margin-bottom: 1.5rem;
+      margin: 0 0 1.5rem;
     }
 
     &:after {
@@ -330,7 +320,7 @@ header.header {
 
 // About
 #about {
-  .container .section-container {
+  .section-container {
     .section-content {
       p {
         color: $colorSecondary;
@@ -342,7 +332,7 @@ header.header {
 
 // Skills
 #skills {
-  .container .section-container {
+  .section-container {
     .section-content {
       display: flex;
       justify-content: space-between;
@@ -365,93 +355,91 @@ header.header {
 
 // Projects
 #projects {
-  .container {
-    .section-container {
-      $translateProject: 3px;
-      .section-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
-        grid-gap: .75rem;
+  .section-container {
+    $translateProject: 3px;
+    .section-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+      grid-gap: .75rem;
 
-        .project{
-          background-color: $colorPrimary;
-          border-radius: 2%;
-          // min-height: 20rem;
-
-
-          transition: all 0.3s ease-in-out 0s;
-          -moz-transition: all 0.3s ease-in-out 0s;
-          -webkit-transition: all 0.3s ease-in-out 0s;
-          -o-transition: all 0.3s ease-in-out 0s;
-
-          &:hover,&:focus {
-            z-index: 20;
-            box-shadow: 0px 26px 38px rgba(0,0,0,0.5);
-            -webkit-transform: translateY(-$translateProject);
-               -moz-transform: translateY(-$translateProject);
-                -ms-transform: translateY(-$translateProject);
-                 -o-transform: translateY(-$translateProject);
-                    transform: translateY(-$translateProject);
-          }
+      .project{
+        background-color: $colorPrimary;
+        border-radius: 2%;
+        // min-height: 20rem;
 
 
-          .project-inner{
-            overflow-wrap: break-word;
-            position: relative;
-            padding: 2rem 1.5rem;
-            // display: flex;
-            // align-items: flex-start;
-            // flex-direction: column;
-            height: calc(100% - 4rem);
+        transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
 
-            .gatsby-image-wrapper{
-              // max-height: 100px;
-            }
-
-            .project-title {
-              color: $colorLight;
-              display: block;
-            }
-            .project-external {
-              text-align: right;
-
-              a + a {
-                margin-left: .6rem;
-              }
-
-              .icon-transition {
-                color: $colorLight;
-                font-size: 1.4rem;
-
-                &.fa-external-link-alt:hover,&.fa-github:hover {
-                  color: $colorSecondary;
-                }
-              }
-            }
-            .project-description {
-              color: $colorAccent;
-              padding-bottom: 3rem;
-            }
-            .project-tech {
-              padding: 0;
-              box-sizing: inherit;
-              color: $colorLight;
-              font-size: 1.6rem;
-              display: flex;
-              flex-wrap: wrap-reverse;
-              position: absolute;
-              bottom: 0;
-
-
-              .icon-transition {
-                margin-right: .5rem;
-                margin-bottom: 10px;
-              }
-            }
-          }
-
-
+        &:hover,&:focus {
+          z-index: 20;
+          box-shadow: 0px 26px 38px rgba(0,0,0,0.5);
+          -webkit-transform: translateY(-$translateProject);
+             -moz-transform: translateY(-$translateProject);
+              -ms-transform: translateY(-$translateProject);
+               -o-transform: translateY(-$translateProject);
+                  transform: translateY(-$translateProject);
         }
+
+
+        .project-inner{
+          overflow-wrap: break-word;
+          position: relative;
+          padding: 2rem 1.5rem;
+          // display: flex;
+          // align-items: flex-start;
+          // flex-direction: column;
+          height: calc(100% - 4rem);
+
+          .gatsby-image-wrapper{
+            // max-height: 100px;
+          }
+
+          .project-title {
+            color: $colorLight;
+            display: block;
+          }
+          .project-external {
+            text-align: right;
+
+            a + a {
+              margin-left: .6rem;
+            }
+
+            .icon-transition {
+              color: $colorLight;
+              font-size: 1.4rem;
+
+              &.fa-external-link-alt:hover,&.fa-github:hover {
+                color: $colorSecondary;
+              }
+            }
+          }
+          .project-description {
+            color: $colorAccent;
+            padding-bottom: 3rem;
+          }
+          .project-tech {
+            padding: 0;
+            box-sizing: inherit;
+            color: $colorLight;
+            font-size: 1.6rem;
+            display: flex;
+            flex-wrap: wrap-reverse;
+            position: absolute;
+            bottom: 0;
+
+
+            .icon-transition {
+              margin-right: .5rem;
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+
       }
     }
   }
@@ -459,7 +447,7 @@ header.header {
 
 // Contact
 #contact {
-  .container .section-container {
+  .section-container {
     .section-content {
       .contact-container{
 
@@ -524,28 +512,29 @@ footer.footer {
   left: 0;
   z-index: 10;
   padding: 1.5rem;
-  margin-top: auto;
 
   .text-center {
-    text-align: center;
-    color: $colorSecondary;
-    font-weight: 700;
+    display: flex;
+    justify-content: center;
 
-    .footer-p{
-      display: inline-block;
-      &:before, &:after {
-        content: "";
-        width: 10vw;
-        height: 1px;
-        display: inline-block;
-        vertical-align: middle;
-        background-color: $colorAccent;
-      }
-      &:before {
-        margin-right: 1rem;
-      }
-      &:after {
-        margin-left: 1rem;
+    .footer-container {
+      .footer-p{
+        color: $colorSecondary;
+        font-weight: 700;
+        &:before, &:after {
+          content: "";
+          width: 10vw;
+          height: 1px;
+          display: inline-block;
+          vertical-align: middle;
+          background-color: $colorAccent;
+        }
+        &:before {
+          margin-right: 1rem;
+        }
+        &:after {
+          margin-left: 1rem;
+        }
       }
     }
   }

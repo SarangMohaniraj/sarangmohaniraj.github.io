@@ -1,23 +1,22 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from "gatsby-image"
+import PropTypes from "prop-types"
 
-const Projects = ({projects}) => (
+const Projects = ({ projects }) => (
   <section id="projects">
-    <div className="container">
-      <div className="section-container">
-        <h3 className="section-title">Projects</h3>
-        <div className="section-content">
-          {projects.map(({node: project}) => (
-            <Project project={project} key={project.title} />
-          ))}
-        </div>
+    <div className="section-container">
+      <h3 className="section-title">Projects</h3>
+      <div className="section-content">
+        {projects.map(({node: project}) => (
+          <Project project={project} key={project.title} />
+        ))}
       </div>
     </div>
   </section>
 )
 
-const Project = ( {project} ) => {
+const Project = ({ project }) => {
   const { title, image, description, tech, githubURL, url } = project;
   return(
     <div className="project">
@@ -41,6 +40,32 @@ const Project = ( {project} ) => {
       </div>
     </div>
   )
+}
+
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        tech: PropTypes.arrayOf(PropTypes.string),
+        githubURL: PropTypes.string,
+        url: PropTypes.string,
+        image: PropTypes.string
+      })
+    })
+  )
+}
+
+Project.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    tech: PropTypes.arrayOf(PropTypes.string),
+    githubURL: PropTypes.string,
+    url: PropTypes.string,
+    image: PropTypes.string
+  })
 }
 
 export default Projects
