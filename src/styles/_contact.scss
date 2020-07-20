@@ -1,0 +1,67 @@
+#contact {
+  .section-container {
+    .section-content {
+      .contact-container{
+
+
+        @include media-breakpoint-up(lg){
+          max-width: 450px;
+        }
+
+        overflow: hidden;
+
+        h3 {
+          color: $colorSecondary;
+          margin-bottom: 2rem;
+        }
+
+        label{
+          color: $colorPrimary;
+          font-weight: 700;
+          font-size: 1.2rem;
+
+          input, textarea {
+            background-color: $colorPrimary;
+            color: $colorLight;
+            display: inline-block;
+
+            width: 100%;
+            font-size: 1.2rem;
+            border: none;
+            margin-bottom: 1rem;
+            font-family: $font;
+            padding: 20px;
+            resize: none;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+
+
+            &::placeholder {
+              color: $colorAccent;
+            }
+
+          }
+        }
+
+
+
+        button {
+          background-color: $colorPrimary;
+          color: $colorLight;
+          text-transform: uppercase;
+          border: none;
+          font-size: 1.5rem;
+          padding: 1rem;
+          font-weight: 700;
+          float: right;
+
+
+          &:hover,&:focus {
+            background-color: lighten($colorPrimary,5%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import "../library"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -22,14 +21,14 @@ const IndexPage = () => {
             tech
             githubURL
             url
-            #image {
-            #  childImageSharp {
-            #    fluid(maxHeight: 150) {
-            #      ...GatsbyImageSharpFluid
-            #      ...GatsbyImageSharpFluidLimitPresentationSize
-            #    }
-            #  }
-            #}
+            image {
+              childImageSharp {
+                fluid(maxHeight: 150) {
+                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluidLimitPresentationSize
+                }
+              }
+            }
           }
         }
       }

@@ -1,0 +1,48 @@
+.icon-transition {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+
+  &:hover,&:focus {
+    color: $colorSecondary;
+
+    &.fa-github {
+      color: $github;
+    }
+    &.fa-instagram {
+      color: $instagram;
+    }
+    &.fa-linkedin-in {
+      color: $linkedin;
+    }
+
+    &.fa-python {
+      color: $python;
+    }
+    &.fa-js-square {
+      color: $javascript;
+    }
+    &.fa-react {
+      color: $react;
+    }
+    &.fa-redux {
+      color: $redux;
+    }
+    &.fa-java {
+      color: $java;
+    }
+    &.fa-bootstrap {
+      color: $bootstrap;
+    }
+    &.fa-firebase {
+      color: $firebase;
+    }
+    &.fa-google-colab {
+      color: $google-colab;
+    }
+    &.fa-c-sharp {
+      color: $c-sharp;
+    }
+  }
+}

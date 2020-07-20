@@ -1,0 +1,47 @@
+// Social Media/Networking Side Bar
+.icon-bar {
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-up(xs){
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    .icon-transition{
+      margin: 0 1.5rem;
+
+    }
+
+  }
+
+  @include media-breakpoint-up(md){
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    left: 3rem; //same as navbar-brand so it lines up
+    flex-direction: column;
+
+    .icon-transition{
+      margin: 0 0 1.5rem;
+    }
+
+    &:after {
+      content: "";
+      width: 1px;
+      height: 25vh;
+      background-color: $colorPrimary;
+    }
+
+  }
+
+  .icon-transition{
+    color: $colorPrimary;
+    font-size: 1.5rem;
+
+    &:hover,&:focus {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+
+    }
+  }
+}

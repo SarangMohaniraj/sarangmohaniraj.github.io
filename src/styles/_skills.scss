@@ -1,0 +1,25 @@
+#skills {
+  .section-container {
+    .section-content {
+      display: flex;
+      justify-content: space-between;
+
+      .area {
+        @include media-breakpoint-up(xs){
+          font-size: .8rem;
+        }
+        @include media-breakpoint-up(md){
+          font-size: 1rem;
+        }
+        .skill {
+          margin-bottom: 1rem;
+
+          &:first-child {
+            color: $colorSecondary;
+          }
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+}

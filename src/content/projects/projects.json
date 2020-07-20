@@ -1,54 +1,62 @@
 [
   {
     "title": "Predict Target Federal Funds Rate",
-    "description": "",
+    "description": "Predicting the target federal funds rate set by the Federal Open Market Committee with Natural Language Processing and a Long Short-Term Memory network",
     "tech": ["python","google-colab"],
     "githubURL": "https://github.com/SarangMohaniraj/PredictTargetFederalFundsRate",
     "url": "https://colab.research.google.com/github/SarangMohaniraj/PredictTargetFederalFundsRate/blob/master/PredictTargetFederalFundsRate.ipynb",
-    "image": ".images/PredictTargetFederalFundsRate.png"
+    "image": "./images/PredictTargetFederalFundsRate.png"
   },
   {
     "title": "Chance Me",
-    "description": "",
+    "description": "Predict college acceptance rates for South Brunswick High School Students using data from Naviance using a neural network created from scratch",
     "tech": ["python"],
     "githubURL": "https://github.com/SarangMohaniraj/ChanceMe"
   },
   {
+    "title": "Credit Card Fraud Detection",
+    "description": "Anomaly detection in credit card transaction data",
+    "tech": ["python","google-colab"],
+    "githubURL": "https://github.com/SarangMohaniraj/CreditCardFraudDetection"
+  },
+  {
     "title": "Server Heat Map",
-    "description": "",
+    "description": "Visualize where people access your server using requests from Apache/NGINX access log",
     "tech": ["python"],
-    "githubURL": "https://github.com/SarangMohaniraj/ServerHeatMap"
+    "githubURL": "https://github.com/SarangMohaniraj/ServerHeatMap",
+    "image": "./images/ServerHeatMap.png"
   },
   {
     "title": "Pathfinding",
-    "description": "",
+    "description": "A* Pathfinding implementation in Unity3D",
     "tech": ["c-sharp"],
     "githubURL": "https://github.com/SarangMohaniraj/Pathfinding",
     "image": "./images/pathfinding.png"
   },
   {
     "title": "SB Leos",
-    "description": "",
+    "description": "The South Brunswick Leo Club Website",
     "tech": ["js-square", "react", "redux", "firebase", "bootstrap"],
     "githubURL": "https://github.com/sbleos/sbleos.github.io",
     "url": "https://sbleos.org"
   },
   {
     "title": "Stat",
-    "description": "",
+    "description": "Graph distributions into frequency plots and box plots",
     "tech": ["js-square"],
     "githubURL": "https://github.com/SarangMohaniraj/Stat",
     "url": "https://sarangmohaniraj.github.io/Stat"
   },
   {
     "title": "Open AI Gym Discrete",
-    "description": "",
+    "description": "Solving the CartPole-v1 problem using Deep Q-Learning",
     "tech": ["python"],
-    "githubURL": "https://github.com/SarangMohaniraj/OpenAIGymDiscrete"
+    "githubURL": "https://github.com/SarangMohaniraj/OpenAIGymDiscrete",
+    "image": "./images/OpenAIGymDiscrete.png"
   },
   {
     "title": "Cookie Clicker",
-    "description": "",
+    "description": "Android app of the game Cookie Clicker",
     "tech": ["java"],
     "githubURL": "https://github.com/SarangMohaniraj/CookieClicker"
   }

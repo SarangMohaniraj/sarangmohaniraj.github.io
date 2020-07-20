@@ -71,7 +71,7 @@ export default class Header extends React.Component {
               {name: "Projects", to: "/#projects"},
               {name: "Contact", to: "/#contact"}
             ].map(section => (
-              <li className="nav-item" key={section.name}><AnchorLink to={section.to} title={section.name}><span onClick={() => this.setState({clickNav: true})}>{section.name}</span></AnchorLink></li>
+              <li className="nav-item" key={section.name}><AnchorLink to={section.to} title={section.name}><button onClick={() => this.setState({clickNav: true})}>{section.name}</button></AnchorLink></li>
             ))}
             <li className="slide"></li>
           </Scrollspy>

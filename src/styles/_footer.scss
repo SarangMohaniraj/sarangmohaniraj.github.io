@@ -1,0 +1,30 @@
+footer.footer {
+  z-index: 10;
+  padding: 1.5rem;
+
+  .text-center {
+    display: flex;
+    justify-content: center;
+
+    .footer-container {
+      .footer-p{
+        color: $colorSecondary;
+        font-weight: 700;
+        &:before, &:after {
+          content: "";
+          width: 10vw;
+          height: 1px;
+          display: inline-block;
+          vertical-align: middle;
+          background-color: $colorAccent;
+        }
+        &:before {
+          margin-right: 1rem;
+        }
+        &:after {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// Breakpoints (the given screen size or larger)
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// always go in order from xs --> xl
+@mixin media-breakpoint-up($size) {
+  @if $size == xs {
+    @media (min-width: 100px) { @content; }
+  }
+  @else if $size == sm {
+    @media (min-width: $sm) { @content; }
+  }
+  @else if $size == md {
+    @media (min-width: $md)  { @content; }
+  }
+  @else if $size == lg {
+    @media (min-width: $lg)  { @content; }
+  }
+  @else if $size == xl {
+    @media (min-width: $xl)  { @content; }
+  }
+  @else {
+    @media (min-width: $size)  { @content; }
+  }
+}

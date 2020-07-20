@@ -1,0 +1,101 @@
+#projects {
+  .section-container {
+    $translateProject: 3px;
+    .section-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+      grid-gap: .75rem;
+
+
+      .project {
+        background-color: $colorPrimary;
+        border-radius: 2%;
+
+        transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+
+        &:hover,&:focus {
+          z-index: 20;
+          box-shadow: 0px 26px 38px rgba(0,0,0,0.5);
+          -webkit-transform: translateY(-$translateProject);
+             -moz-transform: translateY(-$translateProject);
+              -ms-transform: translateY(-$translateProject);
+               -o-transform: translateY(-$translateProject);
+                  transform: translateY(-$translateProject);
+        }
+        .gatsby-image-wrapper{
+            margin: 0 auto;
+
+            img {
+              background-color: $colorLight;
+            }
+          }
+
+        .project-inner{
+          overflow-wrap: break-word;
+          position: relative;
+          padding: 2rem 1.5rem;
+          display: flex;
+          flex-direction: column;
+
+          height: calc(100% - 4rem);
+
+
+
+          .project-main {
+            flex: 1;
+
+            .project-title {
+              color: $colorLight;
+              display: block;
+              margin: 1rem 0;
+            }
+            .project-external {
+              text-align: right;
+
+              a + a {
+                margin-left: .6rem;
+              }
+
+              .icon-transition {
+                color: $colorLight;
+                font-size: 1.4rem;
+
+                &.fa-external-link-alt:hover,&.fa-github:hover {
+                  color: $colorSecondary;
+                }
+              }
+            }
+            .project-description {
+              color: $colorAccent;
+              padding-bottom: 3rem;
+              font-size: 0.9rem;
+              line-height: 1.4rem;
+            }
+          }
+
+
+          .project-tech {
+            padding: 0;
+            box-sizing: inherit;
+            color: $colorLight;
+            font-size: 1.6rem;
+            display: flex;
+            flex-wrap: wrap-reverse;
+            margin-top: auto;
+
+
+            .icon-transition {
+              margin-right: .5rem;
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+}

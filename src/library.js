@@ -13,7 +13,8 @@ import {
         } from '@fortawesome/free-brands-svg-icons'
 
 
-/* Custom svg
+/**
+ * Custom svg
  * https://icomoon.io/app/#/select
  * Click Get Code
  * The first 2 values of the array should be the non-zero values of the svg viewbox
