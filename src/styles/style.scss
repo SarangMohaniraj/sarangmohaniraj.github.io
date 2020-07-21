@@ -9,17 +9,17 @@
  */
 
 // Configuration
-@import "mixins/breakpoints";
+@import "mixins";
 @import "colors"; // use... as *
-@import "icon-transition";
 
 // Layout & Components
 @import "layout"; // use... as *
+@import "icon-transition";
 @import "header";
 @import "hero";
 @import "projects";
-@import "icon-bar";
 @import "about";
 @import "skills";
 @import "contact";
+@import "icon-bar";
 @import "footer";

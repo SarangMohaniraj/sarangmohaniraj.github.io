@@ -56,7 +56,7 @@ Projects.propTypes = {
         tech: PropTypes.arrayOf(PropTypes.string),
         githubURL: PropTypes.string,
         url: PropTypes.string,
-        image: PropTypes.string
+        image: PropTypes.object
       })
     })
   )
@@ -69,7 +69,7 @@ Project.propTypes = {
     tech: PropTypes.arrayOf(PropTypes.string),
     githubURL: PropTypes.string,
     url: PropTypes.string,
-    image: PropTypes.string
+    image: PropTypes.object
   })
 }
 

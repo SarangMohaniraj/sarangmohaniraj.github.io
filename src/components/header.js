@@ -1,5 +1,6 @@
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import Scrollspy from 'react-scrollspy'
+import Image from "gatsby-image"
 import React from "react"
 
 export default class Header extends React.Component {
@@ -25,7 +26,8 @@ export default class Header extends React.Component {
       const currentScrollY = window.pageYOffset;
       let visible = prevScrollY > currentScrollY;
 
-      /* Click Nav is so when one of the nav items are clicked and scrolling to its respective section,
+      /**
+       * Click Nav is so when one of the nav items are clicked and scrolling to its respective section,
        * navbar stays visible for the entire scroll, as well as afterward. It will go away when scrolled downward.
        * The navbar-brand doesn't need clickNav because the scroll direction is always upward, so it will always
        * show.
@@ -60,10 +62,14 @@ export default class Header extends React.Component {
 
   render(){
     const { visible, height, prevScrollY } = this.state;
+    const { icon } = this.props;
+
     return(
       <header className="header" style={{top: !visible ? `-${height+5}px` : 0, boxShadow: prevScrollY < height*4 ? "none" : "0 4px 2px -2px rgba(0,0,0,.16)"}} ref={this.header}>
         <nav>
-          <AnchorLink className="navbar-brand" to="/#hero" title="Sarang Mohaniraj" stripHash />
+          <AnchorLink className="navbar-brand" to="/#hero" title="Sarang Mohaniraj" stripHash>
+            {icon && <Image fluid={icon.childImageSharp.fluid} alt="Home"/>}
+          </AnchorLink>
           <Scrollspy items={['about', 'skills', 'projects', 'contact']} currentClassName="active" className="navbar" offset={-75}>
             {[
               {name: "About Me", to: "/#about"},

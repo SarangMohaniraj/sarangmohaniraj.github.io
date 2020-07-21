@@ -10,6 +10,13 @@ import Footer from "./footer"
 const Layout = ({ children }) => {
    const content = useStaticQuery(graphql`
     {
+      myIcon: file(relativePath: { eq: "icons/icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 32, maxHeight: 32) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       allIconBarJson {
         edges {
           node {
@@ -22,9 +29,11 @@ const Layout = ({ children }) => {
   `);
 
   const icons = content.allIconBarJson.edges;
+  const myIcon = content.myIcon;
+
   return(
     <React.Fragment>
-      <Header/>
+      <Header icon={myIcon}/>
       <main className="container">{children}</main>
       <Footer icons={icons}/>
     </React.Fragment>

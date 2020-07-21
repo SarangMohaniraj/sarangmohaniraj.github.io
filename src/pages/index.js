@@ -25,7 +25,6 @@ const IndexPage = () => {
               childImageSharp {
                 fluid(maxHeight: 150) {
                   ...GatsbyImageSharpFluid_withWebp
-                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }

@@ -11,19 +11,12 @@
         background-color: $colorPrimary;
         border-radius: 2%;
 
-        transition: all 0.3s ease-in-out 0s;
-        -moz-transition: all 0.3s ease-in-out 0s;
-        -webkit-transition: all 0.3s ease-in-out 0s;
-        -o-transition: all 0.3s ease-in-out 0s;
+        @include transition(all 0.2s ease-in-out 0s);
 
         &:hover,&:focus {
           z-index: 20;
           box-shadow: 0px 26px 38px rgba(0,0,0,0.5);
-          -webkit-transform: translateY(-$translateProject);
-             -moz-transform: translateY(-$translateProject);
-              -ms-transform: translateY(-$translateProject);
-               -o-transform: translateY(-$translateProject);
-                  transform: translateY(-$translateProject);
+          @include transform(translateY(-$translateProject));
         }
         .gatsby-image-wrapper{
             margin: 0 auto;

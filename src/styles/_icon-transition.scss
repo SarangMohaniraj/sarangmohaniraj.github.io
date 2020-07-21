@@ -1,8 +1,5 @@
 .icon-transition {
-  transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -o-transition: all 0.3s ease-in-out 0s;
+  @include transition(all 0.3s ease-in-out 0s);
 
   &:hover,&:focus {
     color: $colorSecondary;
